@@ -1,1 +1,191 @@
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc Mừng 20/10 💖</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffc3a0);
+    text-align: center;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 35px 24px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 15px 50px rgba(180, 20, 90, 0.3);
+    z-index: 2;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.flower {
+    font-size: 65px;
+    animation: swing 2s infinite ease-in-out;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+}
+
+h1 {
+    color: #ff2878;
+    font-size: 30px;
+    margin: 15px 0;
+    text-shadow: 2px 2px 8px #ffc0d7;
+}
+
+h2 {
+    color: #ff5790;
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #8c3657;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff2678, #ff75a5);
+    box-shadow: 0 7px 20px #ff9aba;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+#gift {
+    display: none;
+    margin-top: 25px;
+    padding: 20px 10px;
+    border-radius: 20px;
+    background: #fff0f6;
+    animation: appear 0.6s ease;
+}
+
+.money {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff2678;
+    margin: 12px 0;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 24px;
+    animation: floatUp 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #cc6286;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="flower">🌹💐🌹</div>
+
+    <h1>Chúc Mừng 20/10</h1>
+    <h2>Gửi người con gái anh yêu 💗</h2>
+
+    <p>
+        Chúc em yêu của anh luôn xinh đẹp,<br>
+        vui vẻ, hạnh phúc và luôn rạng rỡ nhé! 🌷<br>
+        <b>Mong rằng mỗi ngày bên anh đều là một ngày đặc biệt.</b><br>
+        Anh yêu em nhiều lắm! 💕
+    </p>
+
+    <button id="receive" onclick="nhanTien()">
+        💸 BẤM NHẬN TIỀN 💸
+    </button>
+
+    <div id="gift">
+        <div style="font-size:45px">🎁💖💵</div>
+        <h2>Chúc mừng em yêu!</h2>
+        <p>Em đã mở khóa thành công món quà 20/10!</p>
+        <div class="money">100.000đ</div>
+        <p>
+            Đây là lì xì yêu thương của anh dành cho em 🥰<br>
+            Chúc em luôn vui vẻ và yêu anh thật nhiều nhé! 💋
+        </p>
+        <div style="font-size:30px;margin-top:12px">
+            💐❤️😘❤️💐
+        </div>
+    </div>
+
+    <div class="footer">
+        Mãi yêu em • Happy Vietnamese Women's Day 💕
+    </div>
+</div>
+
+<script>
+function nhanTien() {
+    document.getElementById("gift").style.display = "block";
+    document.getElementById("receive").style.display = "none";
+
+    for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("div");
+        heart.innerHTML = ["💖", "💕", "🌹", "💸", "💗"][
+            Math.floor(Math.random() * 5)
+        ];
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+        heart.style.fontSize = (20 + Math.random() * 25) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 7000);
+    }
+}
+</script>
+
+</body>
+</html>
+
+
